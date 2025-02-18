@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import QrCode from "qrcode";
 
+const audience=import.meta.env.VITE_CLIENT_AUDIENCE
 function Transfer() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [file, setFile] = useState(null);
@@ -29,10 +30,10 @@ function Transfer() {
 
         // Send the file to the server using fetch (adjust the URL as needed)
         const token = await getAccessTokenSilently({
-          audience: "https://manishgga09.us.auth0.com/api/v2/",
+          audience: `${audience}`,
         });
         const res = await axios.post(
-          "http://localhost:3000/api/ftp/upload",
+          "https://file-sharing-9mar.onrender.com/api/ftp/upload",
           formData,
           {
             headers: {
