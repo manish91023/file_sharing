@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://eloquent-sunburst-c3c111.netlify.app",
 }))
 app.use(express.json());
 app.use(express.urlencoded({extended: true }));
