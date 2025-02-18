@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import QrCode from "qrcode";
 
-const audience=import.meta.env.VITE_CLIENT_AUDIENCE
+const audience="https://manishgga09.us.auth0.com/api/v2/"
 function Transfer() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [file, setFile] = useState(null);
